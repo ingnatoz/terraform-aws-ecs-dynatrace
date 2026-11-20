@@ -1,0 +1,110 @@
+################################################################################
+# OS cruft (macOS / Windows / Linux)
+################################################################################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+*.lnk
+*~
+
+################################################################################
+# IDEs / Editors
+################################################################################
+.idea/
+*.iml
+out/
+.idea_modules/
+
+# VS Code (se permite versionar configs útiles del workspace)
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+.fleet/
+.history/
+
+################################################################################
+# Claude Code (archivos personales, no se comparten)
+################################################################################
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/*.local
+
+################################################################################
+# Variables de entorno locales
+################################################################################
+.env
+.env.*
+**/.env
+**/.env.*
+
+################################################################################
+# Config con secretos (NO versionar — contienen valores sensibles)
+################################################################################
+terraform/config/parameter-store/parameters.json
+
+################################################################################
+# Terraform
+################################################################################
+# Directorio de trabajo local
+**/.terraform/
+
+# Lockfiles: cada usuario genera el suyo con `terraform init`
+**/.terraform.lock.hcl
+**/.terraform.lock.hcl.backup
+
+# State files (no deben versionarse)
+**/terraform.tfstate
+**/terraform.tfstate.*
+**/*.tfstate
+**/*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Plan files (binarios/temporales)
+*.tfplan
+*.tfplan.*
+plan.out
+
+# Overrides locales
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI config files (locales)
+.terraformrc
+terraform.rc
+
+# TFVars (suelen contener secretos); se permiten ejemplos/plantillas
+**/*.tfvars
+**/*.auto.tfvars
+!**/*.tfvars.example
+!**/*.tfvars.sample
+!**/*.auto.tfvars.example
+!**/*.auto.tfvars.sample
+
+################################################################################
+# AWS / Credenciales locales
+################################################################################
+.aws/
+
+################################################################################
+# Logs / temporales
+################################################################################
+*.log
+*.tmp
+*.swp
+*.swo
+*.out
+.makerun/
+note.txt

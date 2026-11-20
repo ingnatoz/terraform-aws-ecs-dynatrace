@@ -1,0 +1,6 @@
+# Normalize line endings in the repository
+* text=auto
+
+# Shell scripts and Makefile keep LF everywhere (WSL, Linux, macOS)
+*.sh text eol=lf
+Makefile text eol=lf
