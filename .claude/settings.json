@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(terraform fmt:*)",
+      "Bash(terraform validate:*)",
+      "Bash(make help)",
+      "Bash(make ecs-validate)",
+      "Bash(make ecs-plan)",
+      "Bash(make ecs-status)",
+      "Bash(make params-validate)",
+      "Bash(make params-plan)",
+      "Bash(make params-status)"
+    ],
+    "ask": [
+      "Bash(terraform apply:*)",
+      "Bash(terraform destroy:*)",
+      "Bash(terraform state rm:*)",
+      "Bash(make aws-push)",
+      "Bash(make ecs-ecr)",
+      "Bash(make ecs-alb)",
+      "Bash(make ecs-service)",
+      "Bash(make ecs-apply)",
+      "Bash(make ecs-destroy)",
+      "Bash(make params-apply)",
+      "Bash(make params-clean)",
+      "Bash(make params-destroy)",
+      "Bash(git push:*)"
+    ],
+    "deny": [
+      "Read(./terraform/config/parameter-store/parameters.json)",
+      "Read(./**/*.tfstate)",
+      "Read(./**/*.tfstate.*)",
+      "Read(./**/.env)",
+      "Read(./**/.env.*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/check-sensitive.sh\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/terraform-fmt.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}
