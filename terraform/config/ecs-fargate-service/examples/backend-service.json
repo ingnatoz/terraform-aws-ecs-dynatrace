@@ -1,0 +1,36 @@
+{
+  "cluster_to_use": "back/example",
+  "service_name": "ms-example-corporation",
+  "ecr_image_tag": "0.0.1",
+  "container_port": 8081,
+
+  "td_task_cpu": 1024,
+  "td_task_ram": 2048,
+
+  "td_main_cpu": 819,
+  "td_main_ram": 2048,
+  "td_main_secrets": [
+    {
+      "name": "LD_PRELOAD",
+      "valueFrom": "/corporation/dynatrace/ld-preload"
+    },
+    {
+      "name": "DB_URL",
+      "valueFrom": "/corporation/backend/db-url"
+    }
+  ],
+
+  "td_dynatrace_cpu": 205,
+  "td_dynatrace_ram": 2048,
+  "td_dynatrace_oneagent_options_param": "/corporation/dynatrace/oneagent-options-back",
+
+  "alb_path_pattern": "/corporation/example-backend/v1/*",
+
+  "tg_health_check_path": "/corporation/example-backend/v1/status",
+  "tg_health_check_interval": 30,
+  "tg_health_check_timeout": 10,
+  "tg_healthy_threshold": 2,
+  "tg_unhealthy_threshold": 6,
+
+  "srv_discovery": true
+}

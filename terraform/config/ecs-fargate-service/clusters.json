@@ -1,0 +1,18 @@
+{
+  "back/example": {
+    "cluster_name": "cluster-corporation-back",
+    "vpc_id": "vpc-xxxxxxxxxxxxxxxxx",
+    "private_subnet_ids": ["subnet-xxxxxxxxxxxxxxxx1", "subnet-xxxxxxxxxxxxxxxx2"],
+    "cluster_security_group_id": "sg-xxxxxxxxxxxxxxxx1",
+    "alb_name": "alb-corporation-back",
+    "alb_listener_port": 443
+  },
+  "front/example": {
+    "cluster_name": "cluster-corporation-front",
+    "vpc_id": "vpc-xxxxxxxxxxxxxxxxx",
+    "private_subnet_ids": ["subnet-xxxxxxxxxxxxxxxx3", "subnet-xxxxxxxxxxxxxxxx4"],
+    "cluster_security_group_id": "sg-xxxxxxxxxxxxxxxx2",
+    "alb_name": "alb-corporation-front",
+    "alb_listener_port": 443
+  }
+}

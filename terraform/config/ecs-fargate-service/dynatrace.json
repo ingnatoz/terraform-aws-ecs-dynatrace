@@ -1,0 +1,11 @@
+{
+  "installer_image": "public.ecr.aws/docker/library/alpine:3.23",
+  "arch": "x86",
+  "skip_tls_verify": false,
+  "log_group_name": "/ecs/dynatrace-oneagent-installer",
+
+  "ssm_api_url": "/corporation/dynatrace/api-url",
+  "ssm_paas_token": "/corporation/dynatrace/paas-token",
+  "ssm_network_zone": "/corporation/dynatrace/network-zone",
+  "ssm_log_level_con": "/corporation/dynatrace/log-level-con"
+}

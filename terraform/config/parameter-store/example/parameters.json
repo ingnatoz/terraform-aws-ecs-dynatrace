@@ -1,0 +1,30 @@
+[
+  {
+    "parameter_name": "/corporation/dynatrace/api-url",
+    "parameter_value": "https://<your-environment-id>.live.dynatrace.com/api"
+  },
+  {
+    "parameter_name": "/corporation/dynatrace/network-zone",
+    "parameter_value": "<your-network-zone>"
+  },
+  {
+    "parameter_name": "/corporation/dynatrace/log-level-con",
+    "parameter_value": "info"
+  },
+  {
+    "parameter_name": "/corporation/dynatrace/oneagent-options-back",
+    "parameter_value": "flavor=default&include=java"
+  },
+  {
+    "parameter_name": "/corporation/dynatrace/oneagent-options-front",
+    "parameter_value": "flavor=default&include=nginx"
+  },
+  {
+    "parameter_name": "/corporation/dynatrace/ld-preload",
+    "parameter_value": "/opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so"
+  },
+  {
+    "parameter_name": "/corporation/backend/db-url",
+    "parameter_value": "jdbc:postgresql://<db-host>:5432/<db-name>"
+  }
+]
